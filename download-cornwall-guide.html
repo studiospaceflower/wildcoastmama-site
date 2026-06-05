@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Tilly's Cornwall Dog Walk Guide | Wild Coast Mama</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .download-hero {
+      background: var(--parchment);
+      padding: 5rem 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .download-box {
+      max-width: 520px;
+      margin: 0 auto;
+      background: white;
+      padding: 3rem;
+      border: 0.5px solid var(--dust);
+    }
+    .download-box .label {
+      margin-bottom: 1rem;
+      color: var(--teal-mid);
+    }
+    .download-box h1 {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      line-height: 1.2;
+    }
+    .download-box p {
+      font-size: 0.95rem;
+      color: var(--stone);
+      font-style: italic;
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+    .download-rule {
+      width: 40px;
+      height: 1px;
+      background: var(--teal-mid);
+      margin-bottom: 2rem;
+    }
+    .download-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .download-form input {
+      padding: 0.85rem 1.2rem;
+      border: 0.5px solid var(--gravel);
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--ink);
+      background: white;
+      outline: none;
+      width: 100%;
+    }
+    .download-form input:focus {
+      border-color: var(--teal-mid);
+    }
+    .download-form button {
+      padding: 1rem 1.5rem;
+      background: var(--teal-deep);
+      color: white;
+      border: none;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+    .download-form button:hover {
+      background: var(--teal-mid);
+    }
+    .download-note {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      color: var(--pebble);
+      margin-top: 0.8rem;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 2rem 0;
+    }
+    .success-message h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .success-message p {
+      margin-bottom: 1.5rem;
+    }
+    .success-message a {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--teal-deep);
+      color: white;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+    .success-message a:hover {
+      background: var(--teal-mid);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="/" class="site-logo">
+          <span class="site-logo__name">Wild Coast Mama</span>
+          <span class="site-logo__tag">Van life · Pregnancy · Cornwall</span>
+        </a>
+        <nav>
+          <a href="/blog/">Blog</a>
+          <a href="https://etsy.com/shop/WildCoastMama" class="nav-cta">Etsy Shop</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <section class="download-hero">
+    <div class="container">
+      <div class="download-box">
+
+        <div id="form-section">
+          <p class="label">Free download</p>
+          <h1>Tilly's Cornwall Dog Walk Guide</h1>
+          <div class="download-rule"></div>
+          <p>Five dog-friendly coastal walks tested and approved by an opinionated golden retriever. Enter your name and email and we'll send it straight to you — plus occasional honest updates from the van.</p>
+
+          <form class="download-form" id="download-form">
+            <input type="text" id="first-name" name="FNAME" placeholder="Your first name" required>
+            <input type="email" id="email" name="EMAIL" placeholder="Your email address" required>
+            <!-- Mailchimp honeypot -->
+            <div style="position:absolute;left:-5000px;" aria-hidden="true">
+              <input type="text" name="b_3573a1e14870e824d26f2b639_b3051aec63" tabindex="-1" value="">
+            </div>
+            <button type="submit">Download the free guide</button>
+            <p class="download-note">No spam. Unsubscribe any time. Tilly approves of this arrangement.</p>
+          </form>
+        </div>
+
+        <div class="success-message" id="success-section">
+          <p class="label" style="color:var(--teal-mid);text-align:center;">You're in</p>
+          <h2>Your guide is ready</h2>
+          <p>Thanks for joining us. Your download should start automatically. If not, click the button below.</p>
+          <a href="/WildCoastMama_CornwallDogWalkGuide.pdf" download>Download the guide</a>
+          <p style="margin-top:1.5rem;font-size:0.85rem;">
+            <a href="/" style="color:var(--teal-mid);font-family:var(--sans);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;">← Back to the site</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('download-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const fname = document.getElementById('first-name').value;
+
+      // Submit to Mailchimp via hidden iframe (avoids CORS)
+      const form = document.createElement('form');
+      form.action = 'https://wildcoastmama.us14.list-manage.com/subscribe/post?u=3573a1e14870e824d26f2b639&id=b3051aec63&f_id=00092be1f0';
+      form.method = 'POST';
+      form.target = 'mailchimp-frame';
+
+      const emailInput = document.createElement('input');
+      emailInput.type = 'hidden';
+      emailInput.name = 'EMAIL';
+      emailInput.value = email;
+      form.appendChild(emailInput);
+
+      const fnameInput = document.createElement('input');
+      fnameInput.type = 'hidden';
+      fnameInput.name = 'FNAME';
+      fnameInput.value = fname;
+      form.appendChild(fnameInput);
+
+      const honeypot = document.createElement('input');
+      honeypot.type = 'hidden';
+      honeypot.name = 'b_3573a1e14870e824d26f2b639_b3051aec63';
+      honeypot.value = '';
+      form.appendChild(honeypot);
+
+      // Hidden iframe to submit without redirect
+      let iframe = document.getElementById('mailchimp-frame');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        iframe.name = 'mailchimp-frame';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+      }
+
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
+
+      // Show success and trigger download
+      document.getElementById('form-section').style.display = 'none';
+      document.getElementById('success-section').style.display = 'block';
+
+      // Auto-trigger download
+      setTimeout(function() {
+        const a = document.createElement('a');
+        a.href = '/WildCoastMama_CornwallDogWalkGuide.pdf';
+        a.download = 'WildCoastMama_CornwallDogWalkGuide.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>
