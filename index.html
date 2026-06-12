@@ -1,3 +1,6 @@
+Here's the complete index.html — just replace the whole thing:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +21,7 @@
         </a>
         <nav>
           <a href="/blog/">Blog</a>
-         <a href="https://etsy.com/shop/WildCoastMama" class="nav-cta">Etsy Shop</a>
+          <a href="https://etsy.com/shop/WildCoastMama" class="nav-cta">Etsy Shop</a>
         </nav>
       </div>
     </div>
@@ -108,6 +111,84 @@
   </div>
 </section>
 
-<section style="padding:5rem 0;background:var(--teal-pale);">
+<section id="downloads" style="padding:5rem 0;background:var(--teal-pale);">
   <div class="container">
-    <div class="sect
+    <div class="section-label">
+      <span class="label" style="color:var(--teal-mid);">Free downloads</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;max-width:800px;">
+      <div style="background:white;padding:2rem;border:0.5px solid var(--dust);">
+        <p class="label" style="color:var(--teal-mid);margin-bottom:0.8rem;">Checklist</p>
+        <h3 style="font-size:1.1rem;margin-bottom:0.6rem;">Van Life Starter Checklist</h3>
+        <p style="font-size:0.88rem;color:var(--stone);margin-bottom:1.2rem;">40 things we wish someone had told us before we started the build.</p>
+        <a href="https://www.etsy.com/shop/WildCoastMama" target="_blank" class="read-more">Get it on Etsy</a>
+      </div>
+      <div style="background:white;padding:2rem;border:0.5px solid var(--dust);">
+        <p class="label" style="color:var(--teal-mid);margin-bottom:0.8rem;">Walk guide</p>
+        <h3 style="font-size:1.1rem;margin-bottom:0.6rem;">Tilly's Cornwall Dog Walk Guide</h3>
+        <p style="font-size:0.88rem;color:var(--stone);margin-bottom:1.2rem;">Five dog-friendly coastal walks, tested and rated by an opinionated golden retriever.</p>
+        <a href="/download-cornwall-guide.html" class="read-more">Download free</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-strip" id="about">
+  <div class="container">
+    <div class="about-strip-inner">
+      <div>
+        <p class="label about-strip__label">About Wild Coast Mama</p>
+        <h2>We chose the van over the mortgage. Then life got interesting.</h2>
+        <div class="about-strip__rule"></div>
+        <p>We're building a van on the Cornish coast, expecting our first baby, and figuring out what a different kind of family life looks like. This blog is the honest version — the spray foam and the cream crackers and the moments that were hard and the ones that were completely worth it.</p>
+        <p>Tilly the golden retriever has not been consulted on any of the major decisions. She has opinions regardless.</p>
+      </div>
+      <div class="about-image">WCM</div>
+    </div>
+  </div>
+</section>
+
+<section class="email-strip">
+  <div class="container--narrow">
+    <p class="label">Stay in the loop</p>
+    <h2>Every Tuesday, something real from the wild coast</h2>
+    <p>No newsletters that sound like newsletters. Just honest updates from the van, the coast path, and whatever Tilly has stolen this week.</p>
+    <form class="email-form" onsubmit="return false;">
+      <input type="email" placeholder="Your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="email-note">No spam. Unsubscribe any time. Tilly approves of this arrangement.</p>
+  </div>
+</section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-brand__name">Wild Coast Mama</div>
+          <p>Van life, pregnancy, Cornwall, and one very opinionated golden retriever. The honest version.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Read</h4>
+          <ul>
+            <li><a href="/blog/">All posts</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Download</h4>
+          <ul>
+            <li><a href="/download-cornwall-guide.html">Cornwall Dog Walk Guide</a></li>
+            <li><a href="https://etsy.com/shop/WildCoastMama">Etsy shop</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Wild Coast Mama</span>
+        <span>wildcoastmama.co.uk</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+```
