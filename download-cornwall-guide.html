@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Cornwall Dog Walk Guide | Dog-Friendly Walks Cornwall | Wild Coast Mama</title>
+  <title>Download Tilly's Cornwall Dog Walk Guide | Wild Coast Mama</title>
   <link rel="stylesheet" href="/css/style.css">
   <style>
     .download-hero {
@@ -19,36 +19,13 @@
       background: white;
       padding: 3rem;
       border: 0.5px solid var(--dust);
-      text-align: center;
     }
     .download-box .label { margin-bottom: 1rem; color: var(--teal-mid); display: block; }
     .download-box h1 { font-size: 2rem; margin-bottom: 0.8rem; line-height: 1.2; }
     .download-box .strap { font-size: 0.95rem; color: var(--stone); font-style: italic; margin-bottom: 2rem; line-height: 1.65; }
-    .download-rule { width: 40px; height: 1px; background: var(--teal-mid); margin: 0 auto 2rem; }
-    .download-btn {
-      display: inline-block;
-      padding: 1.1rem 2.5rem;
-      background: var(--teal-deep);
-      color: white;
-      font-family: var(--sans);
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s;
-      margin-bottom: 1rem;
-    }
-    .download-btn:hover { background: var(--teal-mid); }
-    .download-note {
-      font-family: var(--sans);
-      font-size: 0.6rem;
-      color: var(--pebble);
-      letter-spacing: 0.04em;
-    }
+    .download-rule { width: 40px; height: 1px; background: var(--teal-mid); margin-bottom: 2rem; }
     .walk-list {
-      text-align: left;
-      margin: 1.5rem 0 2rem;
+      margin: 0 0 2rem;
       padding: 1.5rem;
       background: var(--teal-pale);
     }
@@ -58,6 +35,41 @@
       margin-bottom: 0.4rem;
     }
     .walk-list p:last-child { margin-bottom: 0; }
+    .download-form { display: flex; flex-direction: column; gap: 1rem; }
+    .download-form input {
+      padding: 0.85rem 1.2rem;
+      border: 0.5px solid var(--gravel);
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--ink);
+      background: white;
+      outline: none;
+      width: 100%;
+    }
+    .download-form input:focus { border-color: var(--teal-mid); }
+    .download-form button {
+      padding: 1rem 1.5rem;
+      background: var(--teal-deep);
+      color: white;
+      border: none;
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      width: 100%;
+    }
+    .download-form button:hover { background: var(--teal-mid); }
+    .download-note {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      color: var(--pebble);
+      margin-top: 0.5rem;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -71,6 +83,7 @@
         </a>
         <nav>
           <a href="/blog/">Blog</a>
+          <a href="/recipes/">Recipes</a>
           <a href="https://etsy.com/shop/WildCoastMama" class="nav-cta">Etsy Shop</a>
         </nav>
       </div>
@@ -83,7 +96,7 @@
         <span class="label">Free download</span>
         <h1>Tilly's Cornwall Dog Walk Guide</h1>
         <div class="download-rule"></div>
-        <p class="strap">Five dog-friendly coastal walks on the Cornish coast — tested and rated by an opinionated golden retriever. Completely free.</p>
+        <p class="strap">Five dog-friendly coastal walks tested and approved by an opinionated golden retriever. Enter your name and email to get your free copy — plus occasional honest updates from the van.</p>
 
         <div class="walk-list">
           <p>🐾 Walk 1 — Porthkidney Beach, Lelant</p>
@@ -93,11 +106,36 @@
           <p>🐾 Walk 5 — The Lizard: Kynance to Housel Bay</p>
         </div>
 
-        <a href="/WildCoastMama_CornwallDogWalkGuide.pdf" download class="download-btn">Download the free guide</a>
-        <p class="download-note">PDF · 8 pages · Free forever · No sign-up required</p>
+        <form class="download-form"
+          action="https://wildcoastmama.us14.list-manage.com/subscribe/post?u=3573a1e14870e824d26f2b639&amp;id=b3051aec63&amp;f_id=00092be1f0"
+          method="post"
+          target="_blank"
+          onsubmit="setTimeout(triggerDownload, 600);">
+
+          <input type="text" name="FNAME" placeholder="Your first name" required>
+          <input type="email" name="EMAIL" placeholder="Your email address" required>
+
+          <div style="position:absolute;left:-5000px;" aria-hidden="true">
+            <input type="text" name="b_3573a1e14870e824d26f2b639_b3051aec63" tabindex="-1" value="">
+          </div>
+
+          <button type="submit">Subscribe & download the free guide</button>
+          <p class="download-note">No spam. Unsubscribe any time. Tilly approves of this arrangement.</p>
+        </form>
       </div>
     </div>
   </section>
+
+  <script>
+    function triggerDownload() {
+      var a = document.createElement('a');
+      a.href = '/WildCoastMama_CornwallDogWalkGuide.pdf';
+      a.download = 'WildCoastMama_CornwallDogWalkGuide.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  </script>
 
 </body>
 </html>
